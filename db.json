@@ -1,0 +1,379 @@
+{
+    "artisti": [
+        {
+            "id": 1,
+            "nome": "Drake",
+            "descrizione": "Rapper",
+            "genere": "RAP",
+            "foto": "drake.jpeg"
+        },
+        {
+            "id": 2,
+            "nome": "XXXTENTACION",
+            "descrizione": "Rapper",
+            "genere": "HIP-HOP",
+            "foto": "XXXTentacion.png"
+        },
+        {
+            "id": 3,
+            "nome": "21 Savage",
+            "descrizione": "Producer \/ Rapper",
+            "genere": "HIP-HOP",
+            "foto": "21Savage.jpeg"
+        },
+        {
+            "id": 4,
+            "nome": "The Weeknd",
+            "descrizione": "POPstar",
+            "genere": "POP",
+            "foto": "theweeknd.jpeg"
+        },
+        {
+            "id": 5,
+            "nome": "Adele",
+            "descrizione": "Vocalist",
+            "genere": "CLASSIC",
+            "foto": "adele.jpeg"
+        },
+        {
+            "id": 6,
+            "nome": "Bad Bunny",
+            "descrizione": "Boh",
+            "genere": "LATIN",
+            "foto": "badbunny.jpeg"
+        },
+        {
+            "id": 7,
+            "nome": "Lazza",
+            "descrizione": "Rapper italiano",
+            "genere": "TRAP",
+            "foto": "Lazza.jpeg"
+        }
+    ],
+    "concerti": [
+        {
+            "id": 1,
+            "idArtista": 1,
+            "localita": "LOS ANGELES",
+            "via": "Alameda Street",
+            "nCivico": "14B",
+            "data": "2024\/02\/28",
+            "ora": "20:00",
+            "nBiglietti": 198,
+            "prezzo": 1
+        },
+        {
+            "id": 2,
+            "idArtista": 2,
+            "localita": "basilicata",
+            "via": "Via2",
+            "nCivico": "NumeroCivico2",
+            "data": "2024\/05\/25",
+            "ora": "19:30",
+            "nBiglietti": 99,
+            "prezzo": 20
+        },
+        {
+            "id": 3,
+            "idArtista": 3,
+            "localita": "abruzzo",
+            "via": "Alameda Street",
+            "nCivico": "14B",
+            "data": "2024\/08\/20",
+            "ora": "20:00",
+            "nBiglietti": 20,
+            "prezzo": 17.9
+        },
+        {
+            "id": 4,
+            "idArtista": 4,
+            "localita": "LOMBARDIA",
+            "via": "Alameda Street",
+            "nCivico": "14B",
+            "data": "2024\/10\/20",
+            "ora": "20:00",
+            "nBiglietti": 1000,
+            "prezzo": 29
+        },
+        {
+            "id": 5,
+            "idArtista": 5,
+            "localita": "LOMBARDIA",
+            "via": "Milano",
+            "nCivico": "FORUM",
+            "data": "2025\/02\/28",
+            "ora": "22:00",
+            "nBiglietti": 2500,
+            "prezzo": 48
+        },
+        {
+            "id": 6,
+            "idArtista": 6,
+            "localita": "SARDEGNA",
+            "via": "Cagliari",
+            "nCivico": "Piazza",
+            "data": "2025\/09\/18",
+            "ora": "21:00",
+            "nBiglietti": 1800,
+            "prezzo": 29
+        },
+        {
+            "id": 7,
+            "idArtista": 7,
+            "localita": "LOMBARDIA",
+            "via": "MILANO",
+            "nCivico": "Piazza Duomo",
+            "data": "2025\/01\/01",
+            "ora": "22:30",
+            "nBiglietti": 89,
+            "prezzo": 65
+        }
+    ],
+    "utenti": [
+        {
+            "nome": "Franca",
+            "cognome": "Zumelli",
+            "dataNascita": "2004-09-08",
+            "email": "francazumelli@icloud.com",
+            "password": "Franca00",
+            "foto": "default.png",
+            "id": 1
+        },
+        {
+            "nome": "Boh",
+            "cognome": "Boh",
+            "dataNascita": "2024-12-31",
+            "email": "duwhaduhauihd@boh.it",
+            "password": "blablabla",
+            "foto": "default.png",
+            "id": 2
+        },
+        {
+            "nome": "aa",
+            "cognome": "aa",
+            "dataNascita": "",
+            "email": "aa",
+            "password": "aa",
+            "foto": "default.png",
+            "id": 3
+        },
+        {
+            "nome": "diaidgiu",
+            "cognome": "diaidgiu",
+            "dataNascita": "",
+            "email": "diaidgiu",
+            "password": "diaidgiu",
+            "foto": "default.png",
+            "id": 4
+        },
+        {
+            "nome": "hwagdyiaugu",
+            "cognome": "hwagdyiaugu",
+            "dataNascita": "",
+            "email": "hwagdyiaugu",
+            "password": "hwagdyiaugu",
+            "foto": "default.png",
+            "id": 5
+        },
+        {
+            "nome": "awjkgdiyagwyduga",
+            "cognome": "awjkgdiyagwyduga",
+            "dataNascita": "",
+            "email": "awjkgdiyagwyduga",
+            "password": "awjkgdiyagwyduga",
+            "foto": "default.png",
+            "id": 6
+        },
+        {
+            "nome": "jdghywadgyuaw",
+            "cognome": "uiawdighawi",
+            "dataNascita": "",
+            "email": "uiawdighawi",
+            "password": "uiawdighawi",
+            "foto": "default.png",
+            "id": 9
+        },
+        {
+            "nome": "hahahahhahahah",
+            "cognome": "hahahahhahahah",
+            "dataNascita": "",
+            "email": "hahahahhahahah",
+            "password": "hahahahhahahah",
+            "foto": "default.png",
+            "id": 10
+        },
+        {
+            "nome": "112121212",
+            "cognome": "112121212",
+            "dataNascita": "",
+            "email": "112121212",
+            "password": "112121212",
+            "foto": "default.png",
+            "id": 11
+        },
+        {
+            "nome": "Franca",
+            "cognome": "Zumellui",
+            "dataNascita": "2004-09-08",
+            "email": "frazumelli04@gmail.com",
+            "password": "Franca00",
+            "foto": "default.png",
+            "id": 12
+        },
+        {
+            "nome": "Franca",
+            "cognome": "Zumelli",
+            "dataNascita": "2024-03-26",
+            "email": "francazumelli2@gmail.com",
+            "password": "FrancaZumelli2004",
+            "foto": "default.png",
+            "id": 13
+        },
+        {
+            "nome": "Franca",
+            "cognome": "Zume",
+            "dataNascita": "2003-12-31",
+            "email": "test@test.com",
+            "password": "Test0000",
+            "foto": "default.png",
+            "id": 14
+        },
+        {
+            "nome": "awhdu",
+            "cognome": "uwhd",
+            "dataNascita": "2040-12-31",
+            "email": "uwdauhiwda@gmail.com",
+            "password": "Franca00",
+            "foto": "default.png",
+            "id": 15
+        },
+        {
+            "nome": "Franca",
+            "cognome": "Zumelli",
+            "dataNascita": "2000-09-08",
+            "email": "blabla@gmail.com",
+            "password": "Franca00",
+            "foto": "default.png",
+            "id": 16
+        },
+        {
+            "nome": "Franca",
+            "cognome": "Zumelli",
+            "dataNascita": "2000-09-08",
+            "email": "blablabla@bla.com",
+            "password": "Franca11",
+            "foto": "default.png",
+            "id": 17
+        },
+        {
+            "nome": "Franca",
+            "cognome": "Zumelli",
+            "dataNascita": "2009-09-09",
+            "email": "fajwiwahudihawuid@gmail.com",
+            "password": "Franca00",
+            "foto": "default.png",
+            "id": 18
+        }
+    ],
+    "ordini": [
+        {
+            "id": 1,
+            "data": "2024\/02\/15",
+            "nTransazione": "00000001",
+            "idConcerto": 1,
+            "idUtente": 1
+        },
+        {
+            "id": 2,
+            "data": "2024\/02\/15",
+            "nTransazione": "00000002",
+            "idConcerto": 2,
+            "idUtente": 2
+        },
+        {
+            "id": 3,
+            "data": "2024\/2\/25",
+            "nTransazione": "00000003",
+            "idConcerto": "1",
+            "idUtente": 1
+        },
+        {
+            "id": 4,
+            "data": "2024\/2\/25",
+            "nTransazione": "00000004",
+            "idConcerto": "2",
+            "idUtente": 1
+        },
+        {
+            "id": 5,
+            "data": "2024\/2\/26",
+            "nTransazione": "00000005",
+            "idConcerto": "1",
+            "idUtente": 1
+        },
+        {
+            "id": 6,
+            "data": "2024\/2\/26",
+            "nTransazione": "00000006",
+            "idConcerto": "2",
+            "idUtente": 1
+        },
+        {
+            "id": 7,
+            "data": "2024\/2\/26",
+            "nTransazione": "00000007",
+            "idConcerto": "2",
+            "idUtente": 1
+        },
+        {
+            "id": 8,
+            "data": "2024\/2\/26",
+            "nTransazione": "00000008",
+            "idConcerto": "1",
+            "idUtente": 1
+        },
+        {
+            "id": 9,
+            "data": "2024\/2\/26",
+            "nTransazione": "00000009",
+            "idConcerto": "2",
+            "idUtente": 1
+        },
+        {
+            "id": 10,
+            "data": "2024\/2\/26",
+            "nTransazione": "00000010",
+            "idConcerto": "1",
+            "idUtente": 1
+        },
+        {
+            "id": 11,
+            "data": "2024\/2\/26",
+            "nTransazione": "00000011",
+            "idConcerto": "2",
+            "idUtente": 1
+        }
+    ],
+    "regioni": [
+        "Abruzzo",
+        "Basilicata",
+        "Calabria",
+        "Campania",
+        "Emilia-Romagna",
+        "Friuli-Venezia Giulia",
+        "Lazio",
+        "Liguria",
+        "Lombardia",
+        "Marche",
+        "Molise",
+        "Piemonte",
+        "Puglia",
+        "Sardegna",
+        "Sicilia",
+        "Toscana",
+        "Trentino-Alto Adige",
+        "Umbria",
+        "Valle d'Aosta",
+        "Veneto"
+    ]
+}

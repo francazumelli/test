@@ -1,0 +1,179 @@
+{
+  "artisti": [
+    {
+      "id": 1,
+      "nome": "Drake",
+      "descrizione": "Rapper",
+      "genere": "RAP",
+      "foto": "drake.jpeg"
+    },
+    {
+      "id": 2,
+      "nome": "XXXTENTACION",
+      "descrizione": "Rapper",
+      "genere": "Hip-Hop",
+      "foto": "XXXTentacion.png"
+    },
+    {
+      "id": 3,
+      "nome": "21 Savage",
+      "descrizione": "Producer / Rapper",
+      "genere": "Hip-Hop",
+      "foto": "21Savage.jpeg"
+    },
+    {
+      "id": 4,
+      "nome": "The Weeknd",
+      "descrizione": "Popstar",
+      "genere": "Pop",
+      "foto": "theweeknd.jpeg"
+    },
+    {
+      "id": 5,
+      "nome": "Adele",
+      "descrizione": "Vocalist",
+      "genere": "Classic",
+      "foto": "adele.jpeg"
+    },
+    {
+      "id": 6,
+      "nome": "Bad Bunny",
+      "descrizione": "Boh",
+      "genere": "Latin",
+      "foto": "badbunny.jpeg"
+    }
+  ],
+  "concerti": [
+    {
+      "id": 1,
+      "idArtista": 1,
+      "localita": "LOS ANGELES",
+      "via": "Alameda Street",
+      "nCivico": "14B",
+      "data": "2024/02/28",
+      "ora": "20:00",
+      "nBiglietti": 200,
+      "prezzo" : 1.00
+    },
+    {
+      "id": 2,
+      "idArtista": 2,
+      "localita": "basilicata",
+      "via": "Via2",
+      "nCivico": "NumeroCivico2",
+      "data": "2024/05/25",
+      "ora": "19:30",
+      "nBiglietti": 100,
+      "prezzo" : 20.00
+
+    },
+    {
+      "id": 3,
+      "idArtista": 3,
+      "localita": "abruzzo",
+      "via": "Alameda Street",
+      "nCivico": "14B",
+      "data": "2024/08/20",
+      "ora": "20:00",
+      "nBiglietti": 20,
+      "prezzo" : 17.90
+
+    },
+    {
+      "id": 4,
+      "idArtista": 4,
+      "localita": "LOMBARDIA",
+      "via": "Alameda Street",
+      "nCivico": "14B",
+      "data": "2024/10/20",
+      "ora": "20:00",
+      "nBiglietti": 1000,
+      "prezzo" : 29.00
+
+    },
+    {
+      "id": 5,
+      "idArtista": 5,
+      "localita": "LOMBARDIA",
+      "via": "Milano",
+      "nCivico": "FORUM",
+      "data": "2025/02/28",
+      "ora": "22:00",
+      "nBiglietti": 2500,
+      "prezzo" : 48.00
+
+    },
+    {
+      "id": 6,
+      "idArtista": 6,
+      "localita": "SARDEGNA",
+      "via": "Cagliari",
+      "nCivico": "Piazza",
+      "data": "2025/09/18",
+      "ora": "21:00",
+      "nBiglietti": 1800,
+      "prezzo" : 29.00
+
+    }
+  ],
+  "utenti": [
+    {
+      "id": 1,
+      "nome": "Utente1",
+      "cognome": "Cognome1",
+      "dataNascita": "1990/01/01",
+      "email": "utente1@example.com",
+      "password": "password1",
+      "foto": "url_foto_utente1"
+    },
+    {
+      "id": 2,
+      "nome": "Utente2",
+      "cognome": "Cognome2",
+      "dataNascita": "1995/05/05",
+      "email": "utente2@example.com",
+      "password": "password2",
+      "foto": "url_foto_utente2"
+    }
+  ],
+  "ordini": [
+    {
+      "id": 1,
+      "data": "2024/02/15",
+      "nTransazione": "Transazione1",
+      "idConcerto": 1,
+      "idUtente": 1
+    },
+    {
+      "id": 2,
+      "data": "2024/02/15",
+      "nTransazione": "Transazione2",
+      "idConcerto": 2,
+      "idUtente": 2
+    }
+  ],
+  "regioni": [
+    "Abruzzo",
+    "Basilicata",
+    "Calabria",
+    "Campania",
+    "Emilia-Romagna",
+    "Friuli-Venezia Giulia",
+    "Lazio",
+    "Liguria",
+    "Lombardia",
+    "Marche",
+    "Molise",
+    "Piemonte",
+    "Puglia",
+    "Sardegna",
+    "Sicilia",
+    "Toscana",
+    "Trentino-Alto Adige",
+    "Umbria",
+    "Valle d'Aosta",
+    "Veneto"
+  ]
+
+
+}
