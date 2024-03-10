@@ -1,0 +1,571 @@
+#sectionContainer div h1{
+    background: linear-gradient(to left, rgb(255, 79, 91), rgb(196, 123, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    font-weight: 600;
+}
+.titleDiv h1 div img{
+    width: 10vh;
+}
+.titleDiv h1 div{
+    display: block;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 5vh;
+}
+body{
+    background-color: rgb(53, 53, 53);
+    color:white;
+    margin: 0;
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+}
+h1{
+    background: linear-gradient(to left, rgb(79, 234, 255), rgb(180, 255, 123));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    font-size: 9vh;
+    text-align: center;
+    margin:0;
+    margin-top:0vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+   
+}
+.titleDiv{
+    margin:0;
+    background: linear-gradient(to right, rgb(86, 0, 14), rgb(0, 55, 94));
+    display: block;
+    width: 100%;
+    justify-content: space-between;
+}
+.titleDiv div{
+    display: block;
+    float: right;
+    font-size:3vh;
+}
+.navDiv{
+    display: flex !important;
+    width:100%;
+    height:10vh;
+    background-color: rgb(88, 88, 88);
+    font-weight: bolder;
+    text-align: center;
+
+}
+.navDiv div{
+    font-weight: 600;
+    padding-top: .3vh;
+    width:17%;
+    border-right:.2vh solid rgb(51, 51, 51);
+
+}
+.navDiv .searchBar{
+    width:90vh;
+    border-right:none;
+    display: inline;
+}
+.navDiv .searchBar input{
+    width:58vh;
+    height:7vh;
+    border-radius: 3.5vh;
+    border: none;
+    background-color: gray;
+    margin:1vh;
+    margin-right: 0;
+    text-transform: uppercase;
+    font-size: 2vh;
+    padding-left: 2vh;
+    float: left;
+    color: rgb(191, 191, 191);
+}
+.navDiv .searchBar input::placeholder{
+    color: rgb(35, 35, 35);
+    font-size: 1.5vh;
+    text-transform: none;
+}s
+.navDiv .searchBar button{
+    width:8.5vh;
+    float:right;
+    height:7.8vh;
+    margin:1vh;
+    margin-left: 0;
+    margin-right: 0;
+}
+#homePageSection{
+    width: 100%;
+    height: 100vh;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.concertDiv{
+    width: 80vh;
+    height:40vh;
+    border: 1px solid white;
+    display: block;
+    margin:2vh;
+    
+}
+.concertDiv img{
+    width: 20vh;
+    height: 20vh;
+    background-size: cover;
+    background-color: gray;
+    
+
+}
+.concertDiv span{
+    display: flex;
+}
+p{
+    font-size: 7vh;
+    word-wrap: break-word;
+    text-align: center;
+    text-transform: uppercase;
+    width: 80vh;
+    font-weight: bolder;
+}
+.concertDiv .addressDate{
+    width: 70vh;
+    background-color: rgba(0, 0, 0, .2);
+    margin-bottom:1vh;
+    display: block;
+    height:8vh;
+    text-transform: uppercase;
+}
+.barcode{
+    display: block;
+    position:relative;
+    height: 17vh;
+    font-size:10vh;
+    font-family: "Libre Barcode 39", system-ui;
+    writing-mode: vertical-lr;
+    letter-spacing: 0;
+    text-orientation: mixed;
+
+    margin:0;
+
+    
+}
+.concertDiv:hover{
+   /*box-shadow:inset 0 0 40vh 0 gray !important;*/
+   box-shadow:inset 0 0 40vh 0 rgb(174, 174, 174) !important;
+    outline: .5vh solid rgb(171, 234, 255);
+}
+.concertDiv:hover::before{
+    display: block;
+    position: absolute;
+    content:"COMPRA ORA";
+    font-size: 10vh;
+    font-weight: bolder;
+    line-height:40vh;
+    width: 80vh;
+    text-align: center;
+    color:rgb(135, 225, 255);
+}
+
+
+.addressDate{
+    text-align: center;
+    font-size: 3vh;
+}
+.infoDivContainer{
+    display: flex;
+}
+
+#orderDiv span input{
+    width: 7vh;
+    height: 3vh;
+    margin:1vh;
+}
+.nTicketSpan{
+    position: absolute;
+    display: inline-block;
+    width: 10vh;
+    height: 3vh;
+    padding-left:1vh;
+    margin-left: 69vh;
+    /*box-shadow: inset 0 0 4vh 0 white;*/
+    font-weight: bolder;
+    color:black;
+}
+
+#sectionContainer{
+    display: flex;
+    position: absolute;
+    width:100%;
+    top:30vh;
+}
+#sectionContainer div{
+    width: 50%;
+    border: 1px solid white;
+    display: block;
+    height:auto;
+}
+#sectionContainer div input, button{
+    display: block;
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:3vh;
+    height:5vh;
+    font-size: 2vh;
+}
+#sectionContainer div input::placeholder{
+    font-size: 1.5vh;
+    padding-left: 1vh;
+}
+div input[type = date]{
+    text-align: center;
+    letter-spacing: .5vh;
+    font-size: 2vh;
+    line-height: 5vh;
+}
+#sectionContainer div p{
+    text-align: center;
+    width: 100%;
+    font-size: 2vh;
+}
+section.sectionConcertContainer{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: inset 0 0 50vh 0 rgb(34, 34, 34);
+    padding: 1vh;
+    border-radius: 1vh;;
+    min-height: 60vh;
+}
+.sectionConcertContainer h2{
+    text-align: center;
+}
+.sectionConcertContainer p{
+    display: block;
+    width:100%;
+    font-size: 5vh;
+    text-align: left;
+    /*color:rgb(146, 146, 146);*/
+    color:white;
+    font-weight: lighter;
+
+}
+.sectionConcertContainer p span{
+    color:rgb(183, 183, 183);
+    font-weight: 600;
+}
+.sectionConcertContainer img{
+    width:20vh;
+    height: 20vh;
+}
+.sectionConcertContainer div{
+    display: flex;
+    justify-content: space-between;
+}
+.sectionConcertContainer button{
+    width: 30vh;
+    margin:0;
+    height: 20vh;
+}
+#sectionContainer div span{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#sectionContainer div span input {
+    width: 29vh;
+    display: block;
+    margin:0;
+}
+#priceSpan{
+    position:absolute;
+    width:80vh;
+    z-index: 80;
+
+}
+#paymentsImage{
+    width: 30vh;
+    image-rendering: optimizeQuality;
+}
+
+#paymentDiv{
+    display: block;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+
+}
+#paymentDiv input{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vh;
+    font-size: 1.5vh;
+    display: block;
+    height: 3vh;
+}
+#paymentDiv #cvvInput{
+    width: 30vh;
+}
+#paymentDiv input[type=date]{
+    width: 30vh;
+    line-height: 3vh;
+}
+#paymentDiv #payBtn{
+    width: 30vh;
+    height: 5vh;
+    margin-top:0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#paymentDiv h1{
+    font-size: 3vh;
+    margin-bottom:3vh;
+}
+#paymentDiv label{
+    text-transform: uppercase;
+    font-size: 1.5vh;
+    margin-top: 1vh;
+
+}
+#paymentDiv #paymentOutput{
+    font-size: 1.5vh; 
+    color: rgb(255, 110, 110);
+    text-align: center;
+    font-weight: normal;
+}
+#accountSection{
+    position:relative;
+    width:95%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10vh 0 rgb(28, 28, 28);
+    height: 90vh;
+    border-radius: 3vh;
+    background-color: rgb(53, 53, 53);
+    display: block;
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+
+}
+#accountSection h1{
+    font-size: 4vh;
+    display: block;
+    padding-top: 2vh !important;
+}
+#accountSection div img{
+    width: 15vh;
+    height: 15vh;
+    border-radius: 7.5vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: .3vh solid rgb(66, 66, 66);
+}
+.profileImgDiv{
+    width: 15vh !important;
+    align-items: center;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#accountSection div input{
+    width: 80vh;
+    height: 3vh;
+    margin: 1vh;
+    display: block;
+}
+#accountSection div input[type = date]{
+    line-height: 3vh;
+}
+
+#accountSection div{
+    margin-left: auto;
+    margin-right:auto;
+    display: block;
+    width: 80vh;
+    
+}
+#accountSection table{
+    width: 80%;
+    height: 20vh;
+    padding-right: 1.5vh;
+    overflow-y: scroll;
+    margin-left: auto;
+    margin-top: 2vh;
+    display: block;
+    margin-right: auto;
+    background: linear-gradient(to top, rgb(40, 40, 40) .1%, rgb(53,53,53));
+
+}
+#accountSection table tr{
+    min-height: 5vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+}
+#accountSection table img{
+    width: 5vh;
+    height: 5vh;
+}
+#accountSection table td,th{
+    text-align: left;
+    width: 25vh;
+    border-bottom: .1vh solid gray;
+}
+#accountSection h2{
+    text-align:center;
+
+}
+
+.loader {
+    border:  .4vh solid #f3f3f3; /* colore del bordo */
+    border-top: .4vh solid rgb(52, 110, 219); /* colore del bordo superiore */
+    border-radius: 50%; /* rendi il bordo tondo */
+    width: 5vh;
+    height: 5vh;
+    animation: spin 1s linear infinite; /* aggiungi un'animazione di rotazione */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#artistSection{
+    margin-top: 3.5vh;
+    display: block;
+    width: 90%;
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right:auto;
+    background-color: rgb(50, 50, 50);
+    box-shadow: inset 0 0 10vh 0 black;
+    border-radius: 3.5vh;
+}
+#artistSection div{
+    min-height: 26vh;
+    display: flex !important;
+    display: block;
+    width: 100%;
+    margin-bottom: 1vh;
+    border-bottom :1px solid rgb(36, 36, 36);
+    position: relative;
+
+}
+#artistSection div div{
+    width: 26vh;
+}
+#artistSection div span label{
+   font-size: 2.3vh;
+   font-weight: lighter;
+   color: rgb(209, 209, 209);
+
+   padding-left: .5vh;
+}
+#artistSection div span p{
+    font-size: 2.3vh;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 2vh;
+    color: white;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+label.infoLabel{
+    display: block;
+    width: auto;
+    height: 12vh;
+    overflow: scroll;
+    padding:0;
+    width: 80% !important;
+    font-size: 1.8vh !important;
+    text-transform: uppercase;
+    margin: 0 !important;
+    margin-left: 2vh !important;
+    position: absolute;
+    bottom:0;
+
+}
+p.infoLabel{
+    margin:0 !important;
+    font-size: 1.8vh !important;
+    padding:0 !important;
+}
+#artistSection div div img{
+    width: 25vh;
+    margin: .5vh;
+    margin-bottom: 0;
+    border: .2vh solid rgb(50, 50, 50);
+    outline: .5vh solid rgb(31, 31, 31);
+}
+#allArtists{
+    border: .3vh solid rgb(50, 50, 50);
+    box-shadow: inset 0 0 0 .5vh rgb(50, 50, 50);
+    width: 23vh;
+    margin-right: 2vh;
+    color: white;
+    height: 7vh;
+    margin-top: 1vh !important;
+    font-size: 2.5vh;
+    font-weight: bolder;
+    background-color: rgb(83, 83, 83);
+}
+div.soldOut{
+    pointer-events: none !important;
+}
+div.soldOut::before{
+    position:absolute;
+    display: block;
+    content: "";
+    width: 80vh;
+    height: 40vh;
+    background-color: rgba(0,0,0,.5);
+    background: url(./img/soldout.png);
+    background-size: 80vh 40vh;
+    color: rgb(130, 168, 255);
+    z-index: 90;
+}
+input[type = date]{
+    color: black;
+    text-align: left;
+}
+input[type = date]:disabled{
+    color: black;
+}
+
+#orderHistoryTable tbody tr th{
+    color: rgb(81, 188, 255);
+}
+.artistImgContainer{
+    width: 5vh !important;
+}
+.thArtist{
+    width: 5vh !important;
+}
+#tdBarcode{
+    font-family: "Libre Barcode 39", system-ui !important;
+    font-size: 6vh  !important;
+    width: 11vh !important; 
+    text-align: center !important;
+
+}
+#thBarcode{
+    width: 11vh !important;
+}
+input[type = "file"]{
+    text-align: center;
+    width: 15vh;
+    font-size: 2vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color:transparent;
+    
+}

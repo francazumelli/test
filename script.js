@@ -1,15 +1,16 @@
 class Artista {
-    constructor(id, nome, descrizione, genere, foto) {
+    constructor(id, nome, descrizione, genere, foto, curiosita) {
         this.nome = nome;
         this.id = id;
         this.descrizione = descrizione;
         this.genere = genere;
         this.foto = foto;
+        this.curiosita = curiosita
 
     }
 }
 class Concerto {
-    constructor(id, idArtista, localita, via, nCivico, data, ora, nBiglietti, prezzo) {
+    constructor(id, idArtista, localita, via, nCivico, data, ora, nBiglietti, prezzo, colore, barcode) {
         this.id = id;
         this.idArtista = idArtista;
         this.localita = localita;
@@ -19,6 +20,8 @@ class Concerto {
         this.ora = ora;
         this.nBiglietti = nBiglietti;
         this.prezzo = prezzo;
+        this.colore = colore;
+        this.barcode = barcode;
     }
 }
 
@@ -87,8 +90,9 @@ function elaboraDati(dati) {
 
 
     //inserimento dati negli array
-    artisti = dati.artisti.map(artisti => new Artista(artisti.id, artisti.nome, artisti.descrizione, artisti.genere, artisti.foto));
-    concerti = dati.concerti.map(concerto => new Concerto(concerto.id, concerto.idArtista, concerto.localita, concerto.via, concerto.nCivico, concerto.data, concerto.ora, concerto.nBiglietti, concerto.prezzo));
+    artisti = dati.artisti.map(artisti => new Artista(artisti.id, artisti.nome, artisti.descrizione, artisti.genere, artisti.foto, artisti.curiosita));
+    concerti = dati.concerti.map(concerto => new Concerto(concerto.id, concerto.idArtista, concerto.localita, concerto.via, concerto.nCivico, concerto.data, concerto.ora, concerto.nBiglietti, concerto.prezzo, concerto.colore, concerto.barcode));
+    concerti = shuffle(concerti);
     utenti = dati.utenti.map(utente => new Utente(utente.id, utente.nome, utente.cognome, utente.dataNascita, utente.email, utente.password, utente.foto));
     ordini = dati.ordini.map(ordine => new Ordine(ordine.id, ordine.data, ordine.nTransazione, ordine.idConcerto, ordine.idUtente));
     dati.regioni.forEach(regione => {
@@ -125,6 +129,7 @@ function printHomePage(artisti, concerti, isFiltered = false) {
     } else {
         homePageSection.innerHTML = "";
     }
+    enableNavDiv();
 
     //FILTRA OGNI CONCERTO E TROVA L'ARTISTA CORRISPONDENTE
     concerti.forEach(concerto => {
@@ -145,7 +150,7 @@ function printHomePage(artisti, concerti, isFiltered = false) {
 
         let rand = Math.floor(Math.random() * colors.length);
         // Imposta il colore del biglietto
-        let ticketColor = colors[rand];
+        let ticketColor = concerto.colore;
         div.style.boxShadow = "inset 0 0 40vh 0 " + ticketColor;
         div.setAttribute("data-color", ticketColor);
 
@@ -181,7 +186,7 @@ function printHomePage(artisti, concerti, isFiltered = false) {
         date.innerText = concerto.data + " - " + concerto.ora;
 
         let barcode = document.createElement("span");
-        barcode.innerText = "...";
+        barcode.innerText = concerto.barcode;
         barcode.setAttribute("class", "barcode");
 
         // Crea l'elemento span per il numero dei biglietti
@@ -193,6 +198,9 @@ function printHomePage(artisti, concerti, isFiltered = false) {
         div.appendChild(span);
         infoDiv.appendChild(address);
         infoDiv.appendChild(date);
+
+        concerto.nBiglietti <= 0 ? (div.classList.add("soldOut")) : null
+
         infoDivContainer.appendChild(infoDiv);
         infoDivContainer.appendChild(barcode);
 
@@ -241,11 +249,11 @@ function printFilteredHomePage(artisti, concerti) {
             concertiFilter = sortByDate(concertiFilter);
             concertiFilter = concertiFilter.reverse();
             break;
-        case "mostRelevant":
+        case "lessRelevant":
             concertiFilter = sortByNumberOfTickets(concertiFilter);
             concertiFilter = concertiFilter.reverse();
             break;
-        case "lessRelevant":
+        case "mostRelevant":
             concertiFilter = sortByNumberOfTickets(concertiFilter);
             break;
         case "ascPrice":
@@ -280,6 +288,11 @@ function populateSelects(id, array, attribute) {
     let select = document.getElementById(id);
     let addedValues = [];
     let value = "";
+    select.innerHTML = "";
+    let defOption = document.createElement("option");
+    defOption.setAttribute("value", "noFilter");
+    defOption.innerText = "---";
+    select.appendChild(defOption);
     for (let i = 0; i < array.length; i++) {
         if (attribute) {
             value = array[i][attribute];
@@ -311,6 +324,7 @@ function buyNow(idConcerto) {
     let container = document.createElement("section");
     container.setAttribute("class", "sectionConcertContainer");
     container.setAttribute("id", "sectionConcertContainer");
+    disableNavDiv()
 
     // Trova il concerto corrispondente all'idConcerto
     let selectedConcert = concerti.find(concerto => concerto.id === idConcerto);
@@ -440,11 +454,23 @@ var isNumber = function isNumber(value) {
     return typeof value === 'number' && isFinite(value);
 }
 
+function searchBar(input, artisti, concerti) {
+    let searchTerm = input.value.toLowerCase().trim();
+    let filteredArtists = artisti.filter(artista => artista.nome.toLowerCase().includes(searchTerm));
+    let filteredConcerts = concerti.filter(concerto =>
+        concerto.data.includes(searchTerm) || concerto.via.toLowerCase().includes(searchTerm)
+    );
+
+    printHomePage(filteredArtists, filteredConcerts);
+}
+
+
 function login() {
     if (!loginSession) {
+        disableNavDiv();
         let homepage = document.getElementById("homePageSection");
 
-        if(homepage) document.body.removeChild(homepage);
+        if (homepage) document.body.removeChild(homepage);
 
         let navDiv = document.getElementById("navDiv");
         navDiv.style.display = "none";
@@ -558,8 +584,6 @@ function login() {
         sectionContainer.appendChild(loginDiv);
         sectionContainer.appendChild(signupDiv);
         document.body.appendChild(sectionContainer);
-    } else {
-        console.log("ACCOUNT");
     }
 
 }
@@ -592,38 +616,42 @@ function signUp() {
     let nome = document.getElementById("nameInputS").value;
     let cognome = document.getElementById("surnameInputS").value;
     let birthdate = document.getElementById("birthdateInputS").value;
-    let output;
+    let output = document.getElementById("outputSignUp");
 
-    if(!isBirthdateValid) return;
-    
-    if (email.length >= 8 && password.length >= 8) {
-        if (password === password2) {
-            let nuovoUtente = {
-                "nome": nome,
-                "cognome": cognome,
-                "dataNascita": birthdate,
-                "email": email,
-                "password": password,
-                "foto": "default.png"
-            };
+    if (nome.length <= 0 || cognome.length <= 0) {
+        output.innerText = "COMPILA TUTTI I CAMPI";
+        return;
+    }
+    if (!isBirthdateValid) {
+        output.innerText = "CONTROLLA LA DATA DI NASCITA"; return;
+    }
+    if (!isEmailValid(email)) {
+        output.innerText = "EMAIL NON VALIDA";
+        return;
+    }
 
-            salvaFileJSON(nuovoUtente);
-            let sectionContainer = document.getElementById("sectionContainer");
-            output = document.getElementById("outputSignUp");
-            output.innerText = "REGISTRATO CORRETTAMENTE, ORA PUOI EFFETTUARE IL LOGIN";
-            document.body.removeChild(sectionContainer);
-            login();
-            let navDiv = document.getElementById("navDiv");
-            navDiv.style.display = "block";
-        } else {
-            output = document.getElementById("outputSignUp");
-            output.innerText = "LE PASSWORD NON CORRISPONDONO";
-        }
+    if (email.length < 8 || password.length < 8) {
+        output.innerText = "L'email e la password devono contenere almeno 8 caratteri.";
+    } else if (password !== password2) {
+        output.innerText = "Le password non corrispondono.";
     } else {
-        output = document.getElementById("outputSignUp");
-        output.innerText = "LA PASSWORD DEVE ESSERE DI ALMENO 8 CARATTERI";
+        // Tutte le condizioni sono soddisfatte, procedere con la registrazione
+        output.innerText = "";
+        let nuovoUtente = new Utente(utenti.length + 1, nome, cognome, birthdate, email, password, "default.png");
+        salvaFileJSON(nuovoUtente);
+        utenti.push(nuovoUtente);
+        userId = utenti.length;
+        console.log(userId);
+        loginSession = true;
+        let sectionContainer = document.getElementById("sectionContainer");
+        output.innerText = "REGISTRATO CORRETTAMENTE, ORA PUOI EFFETTUARE IL LOGIN";
+        document.body.removeChild(sectionContainer);
+        let navDiv = document.getElementById("navDiv");
+        navDiv.style.display = "block";
+        printHomePage(artisti, concerti);
     }
 }
+
 
 function salvaFileJSON(utente) {
     let utenteJSON = JSON.stringify(utente);
@@ -654,7 +682,7 @@ function paymentPage(idConcert) {
     console.log(idConcert);
     let sectionConcertContainer = document.getElementById("sectionConcertContainer");
     sectionConcertContainer.innerHTML = "";
-
+    disableNavDiv();
     let form = document.createElement("form");
     let h1 = document.createElement("h1");
     h1.innerText = "PROCEDI AL PAGAMENTO";
@@ -803,8 +831,8 @@ function paymentTransition(button, idConcert) {
                     div.removeChild(transitionSpan);
 
                     document.body.removeChild(document.getElementById("sectionConcertContainer"));
-                    printHomePage(artisti, concerti);
                 }, 1000);
+                printHomePage(artisti, concerti);
             } else {
                 width++;
                 progressBar.style.width = width + '%';
@@ -812,53 +840,137 @@ function paymentTransition(button, idConcert) {
         }, 30);
     }
 }
+function showArtists(button) {
+    if (document.getElementById("sectionContainer") && document.getElementById("sectionConcertContainer")) return;
+    disableSelects();
 
-function accountSection(accountDiv) {
+
+    if (document.getElementById("homePageSection")) {
+        document.body.removeChild(document.getElementById("homePageSection"));
+    } else {
+        printHomePage(artisti, concerti);
+    }
+
+    if (document.getElementById("artistSection")) {
+        document.body.removeChild(document.getElementById("artistSection"));
+        enableSelects();
+    }
+
+    button.style.borderColor = button.style.borderColor != "gray" ? "gray" : "rgb(50,50,50)";
+
+    if (!document.getElementById("homePageSection") && !document.getElementById("artistSection") && !document.getElementById("sectionContainer")) {
+        let artistSection = document.createElement("section");
+        artistSection.setAttribute("id", "artistSection");
+        document.body.appendChild(artistSection);
+
+        artisti.forEach(artist => {
+            let artistDiv = document.createElement("div");
+            let imgContainer = document.createElement("div");
+            let img = document.createElement("img");
+            img.src = "./img/" + artist.foto;
+
+            let spanContainer = document.createElement("span");
+
+            let nameLabel = document.createElement("label");
+            let nameParag = document.createElement("p");
+            nameLabel.innerText = artist.nome;
+            nameParag.innerText = "NOME: ";
+
+            let descLabel = document.createElement("label");
+            let descParag = document.createElement("p");
+            descParag.innerText = "DESCRIZIONE: ";
+            descLabel.innerText = artist.descrizione;
+
+            let genreLabel = document.createElement("label");
+            let genreParag = document.createElement("p");
+            genreParag.innerText = "GENERE: ";
+            genreLabel.innerText = artist.genere;
+
+            let infoLabel = document.createElement("label");
+            infoLabel.setAttribute("class", "infoLabel");
+            let infoParag = document.createElement("p");
+            infoParag.innerText = "CURIOSITÀ: ";
+            infoLabel.innerText = artist.curiosita;
+            infoParag.setAttribute("class", "infoLabel");
+
+            nameParag.appendChild(nameLabel);
+            descParag.appendChild(descLabel);
+            genreParag.appendChild(genreLabel);
+
+            spanContainer.appendChild(nameParag);
+            spanContainer.appendChild(descParag);
+            spanContainer.appendChild(genreParag);
+            infoLabel.prepend(infoParag);
+            spanContainer.appendChild(infoLabel);
+
+            imgContainer.appendChild(img);
+            artistDiv.appendChild(imgContainer);
+            artistDiv.appendChild(spanContainer);
+            artistSection.appendChild(artistDiv);
+        })
+    }
+}
+
+function accountSection(utenti) {
+    let accountDiv = document.getElementById("accountDiv");
     if (!loginSession) {
         login();
         return;
     }
-
+    disableNavDiv();
     let accountSection = document.getElementById("accountSection");
     if (!accountSection) {
         accountDiv.style.backgroundColor = "black";
         accountSection = document.createElement("section");
         accountSection.setAttribute("id", "accountSection");
-        document.body.removeChild(document.getElementById("homePageSection"));
+        document.getElementById("homePageSection") ? (document.body.removeChild(document.getElementById("homePageSection"))) : null
         document.getElementById("navDiv").style.display = "none";
         let div = document.createElement("div");
-
 
         let h1 = document.createElement("h1");
         h1.innerText = "ACCOUNT";
 
         let profileImg = document.createElement("img");
+        let profileImgDiv = document.createElement("div");
+        profileImgDiv.setAttribute("class", "profileImgDiv");
 
         let name, surname, birthdate, email;
+        console.log(utenti);
         utenti.forEach(user => {
-            if (user.id === userId) {
+            if (user.id == userId) {
                 profileImg.src = "./img/" + user.foto;
                 name = user.nome;
                 surname = user.cognome;
                 birthdate = user.dataNascita;
                 email = user.email;
+                console.log(name, surname, birthdate, email);
 
 
             }
         })
 
+        let profileImgInput = document.createElement("input");
+        profileImgInput.setAttribute("type", "file");
+        profileImgInput.setAttribute("accept", "image/*");
+        profileImgInput.setAttribute("onchange", "updateProfileImage(this)");
+
         let nameInput = document.createElement("input");
         nameInput.value = name;
+        nameInput.setAttribute("id", "nameInputAccount");
         nameInput.required = "required";
+        nameInput.minLength = "3";
 
         let surnameInput = document.createElement("input");
         surnameInput.value = surname;
         surnameInput.required = "required";
+        surnameInput.setAttribute("id", "surnameInputAccount");
+        surnameInput.minLength = "3";
+
 
 
         let birthdateInput = document.createElement("Input");
         birthdateInput.setAttribute("type", "date");
-        birthdateInput.setAttribute("onchange", "checkExpDate(this,'accountOutput')");
+        birthdateInput.setAttribute("readonly", "true");
         birthdateInput.value = birthdate;
         birthdateInput.required = "required";
 
@@ -866,20 +978,24 @@ function accountSection(accountDiv) {
         emailInput.value = email;
         emailInput.setAttribute("type", "email");
         emailInput.required = "required";
+        emailInput.setAttribute("readonly", "true");
+
 
         let output = document.createElement("p");
         output.setAttribute("id", "accountOutput");
 
         let button = document.createElement("button");
         button.innerText = "MODIFICA";
-        button.setAttribute("onlclick", "updateAccount()");
+        button.setAttribute("onclick", "updateAccount()");
 
         let orderHistoryBtn = document.createElement("button");
         orderHistoryBtn.innerText = "STORICO ORDINI";
         orderHistoryBtn.setAttribute("onclick", "printOrders(userId,artisti,concerti,ordini)");
 
         div.appendChild(h1);
-        div.appendChild(profileImg);
+        profileImgDiv.appendChild(profileImg);
+        profileImgDiv.appendChild(profileImgInput);
+        div.appendChild(profileImgDiv);
         div.appendChild(nameInput);
         div.appendChild(surnameInput);
         div.appendChild(birthdateInput);
@@ -896,10 +1012,85 @@ function accountSection(accountDiv) {
         accountDiv.style.backgroundColor = "rgb(53,53,53)"
         accountSection.parentNode.removeChild(accountSection);
         printHomePage(artisti, concerti);
+
     }
 }
 
-//funzione updateAccount();
+function updateProfileImage(input) {
+    const file = input.files[0];
+    let fileName = file.name;
+    utenti.forEach(user => {
+        user.id == userId ? (user.foto = fileName) : null
+        updateProfileImageJSON(user, input);
+
+        loadingTransition();
+    })
+
+}
+function updateProfileImageJSON(user, input) {
+    // Crea un oggetto FormData per inviare i dati con l'immagine
+    const formData = new FormData();
+    formData.append('id', user.id);
+    formData.append('nome', user.nome);
+    formData.append('cognome', user.cognome);
+    formData.append('foto', input.files[0]);
+
+    // Invia una richiesta POST al server per aggiornare l'immagine del profilo
+    fetch('update_profile_image.php', {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Messaggio di conferma o eventuale errore dal server
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function loadingTransition() {
+    // Crea un elemento div per il cerchio di caricamento
+    const loader = document.createElement('div');
+    loader.classList.add('loader');
+
+    // Aggiungi stili per posizionare il cerchio di caricamento al centro della pagina
+    loader.style.position = 'absolute';
+    loader.style.top = '50%';
+    loader.style.left = '48.5%';
+    loader.style.zIndex = '9999';
+
+    // Aggiungi il cerchio di caricamento alla pagina
+    document.body.appendChild(loader);
+
+    // Rimuovi il cerchio di caricamento dopo 2 secondi
+    setTimeout(() => {
+        document.body.removeChild(loader);
+        accountSection(utenti);
+
+    }, 2000);
+}
+
+
+function updateAccount() {
+    // Ottieni i nuovi valori dai campi di input
+    let newName = document.getElementById("nameInputAccount").value.trim();
+    let newSurname = document.getElementById("surnameInputAccount").value.trim();
+    // Cerca l'utente corrispondente nell'array degli utenti e aggiorna le informazioni
+    utenti.forEach(user => {
+        if (user.id === userId) {
+            user.nome = newName;
+            user.cognome = newSurname;
+            updateAccountJSON(user);
+            console.log(newName, newSurname);
+        }
+    });
+
+    // Aggiorna l'interfaccia utente con le informazioni aggiornate 
+    console.log("updated");
+
+}
+
 function updateOrders(idConcert, userId) {
     let currentDate = new Date();
     let formattedDate = currentDate.getFullYear() + "/" + (currentDate.getMonth() + 1) + "/" + currentDate.getDate();
@@ -914,9 +1105,28 @@ function updateOrders(idConcert, userId) {
         idUtente: userId
     };
     ordini.push(newOrder);
-
     ticketUpdate(idConcert);
+    concerti.forEach(concert => {
+        concert.id == idConcert ? (concert.nBiglietti--) : null
+    })
     salvaOrdineJSON(newOrder);
+}
+function updateAccountJSON(user) {
+    // Invia una richiesta POST al server per aggiornare i dati dell'utente nel file JSON
+    fetch('update_user.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Messaggio di conferma o eventuale errore dal server
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
 
 function salvaOrdineJSON(ordine) {
@@ -1013,16 +1223,22 @@ function fromPriceToPrice(concertiFilter) {
 function searchBarFilter(artistiFilter, concertiFilter) {
     let searchString = document.getElementById("searchBar").value.toLowerCase();
 
-    return concertiFilter.filter(concerto => {
+    // Filtra i concerti in base alla stringa di ricerca
+    let filteredConcerts = concertiFilter.filter(concerto => {
         let artista = artistiFilter.find(artist => artist.id === concerto.idArtista);
-        return (
-            artista.nome.toLowerCase().includes(searchString) ||
+        return artista.nome.toLowerCase().includes(searchString) ||
             artista.genere.toLowerCase().includes(searchString) ||
             concerto.data.toLowerCase().includes(searchString) ||
-            concerto.localita.toLowerCase().includes(searchString)
-        );
+            concerto.localita.toLowerCase().includes(searchString) ||
+            concerto.via.toLowerCase().includes(searchString) ||
+            concerto.nCivico.toLowerCase().includes(searchString);
+
+
     });
+
+    printHomePage(artistiFilter, filteredConcerts);
 }
+
 function ticketUpdate(idConcerto) {
     console.log("function Called");
     // Creazione di un oggetto FormData contenente l'ID del concerto
@@ -1057,12 +1273,14 @@ function ticketUpdate(idConcerto) {
 function printOrders(userId, artisti, concerti, ordini) {
     let accountSection = document.getElementById("accountSection");
     let table;
-    table = document.getElementById("orderHistoryTable")
+    table = document.getElementById("orderHistoryTable");
     if (!table) {
         table = document.createElement("table");
         table.setAttribute("id", "orderHistoryTable");
     }
+    table.innerHTML = "";
     let userOrders = [];
+    
 
     ordini.forEach(order => {
         if (order.idUtente == userId) {
@@ -1084,6 +1302,9 @@ function printOrders(userId, artisti, concerti, ordini) {
 
     if (userOrders.length > 0) {
         let title = document.createElement("h2");
+        //intestazioni tabella
+        table.innerHTML = "<tr><th>DATA</th><th>TRANSAZIONE</th><th>LOCALITÀ</th><th>LUOGO</th>" + 
+                        "<th>ORA</th><th>ARTISTA</th><th id='thBarcode'>BARCODE</th><th class='thArtist'>FOTO</th></tr>";
 
         userOrders.forEach(order => {
             let tr = document.createElement("tr");
@@ -1092,8 +1313,12 @@ function printOrders(userId, artisti, concerti, ordini) {
             let concertPlace = document.createElement("td");
             let concertTime = document.createElement("td");
             let concertArtist = document.createElement("td");
+            let artistiImgContainer = document.createElement("td");
+                artistiImgContainer.setAttribute("class","artistImgContainer");
             let artistImg = document.createElement("img");
             let transationN = document.createElement("td");
+            let barcode = document.createElement("td");
+                barcode.setAttribute("id","tdBarcode");
 
 
             date.innerText = order.data;
@@ -1104,13 +1329,17 @@ function printOrders(userId, artisti, concerti, ordini) {
             concertTime.innerText = order.concerto.ora;
             concertArtist.innerText = order.artista.nome;
             artistImg.src = "./img/" + order.artista.foto;
+            barcode.innerText = order.concerto.barcode;
+
             tr.appendChild(date);
             tr.appendChild(transationN);
             tr.appendChild(concertPlace);
             tr.appendChild(concertAddress);
             tr.appendChild(concertTime);
             tr.appendChild(concertArtist);
-            tr.appendChild(artistImg);
+            tr.appendChild(barcode);
+            artistiImgContainer.appendChild(artistImg);
+            tr.appendChild(artistiImgContainer);
             table.appendChild(tr);
         });
         accountSection.appendChild(table);
@@ -1121,29 +1350,67 @@ function printOrders(userId, artisti, concerti, ordini) {
     }
 }
 
-function checkBirthdate(input, id){
+function checkBirthdate(input, id) {
     let output = document.getElementById(id);
     let today = new Date();
-    let birthdate = new Date(input);
-
-    // Controllo se la data di nascita è nel futuro
-    if (birthdate > today) {
-        output.innerText = "INSERISCI UNA DATA VALIDA";
+    let birthdate = new Date(input.value);
+    // Controllo se la data di nascita è nel futuro o antecedente al 1924
+    if (birthdate > today || birthdate.getFullYear() < 1924) {
+        output.innerText = birthdate > today ? "La data di nascita non può essere nel futuro." : "Hai più di 100 anni?😱";
         isBirthdateValid = false;
-        return; // Aggiunto per uscire dalla funzione in caso di data futura
+        return; // Aggiunto per uscire dalla funzione in caso di data non valida
     }
-    
-    // Se entrambi i controlli passano, la data è valida
+    // Se tutte le condizioni sono soddisfatte, la data di nascita è valida
     isBirthdateValid = true;
+    output.innerText = "";
 }
 
 
+function disableNavDiv() {
+    document.getElementById("navDiv").style.pointerEvents = "none";
+}
+function enableNavDiv() {
+    document.getElementById("navDiv").style.pointerEvents = "auto";
+}
 
+function disableSelects() {
+    document.getElementById("genreDiv").style.pointerEvents = "none";
+    document.getElementById("countryDiv").style.pointerEvents = "none";
+    document.getElementById("orderDiv").style.pointerEvents = "none";
+    document.getElementById("searchBar").style.pointerEvents = "none";
+    document.getElementById("accountDiv").style.pointerEvents = "none";
+}
+function enableSelects() {
+    document.getElementById("genreDiv").style.pointerEvents = "auto";
+    document.getElementById("countryDiv").style.pointerEvents = "auto";
+    document.getElementById("orderDiv").style.pointerEvents = "auto";
+    document.getElementById("searchBar").style.pointerEvents = "auto";
+    document.getElementById("accountDiv").style.pointerEvents = "auto";
+}
 
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
 
+    // While there remain elements to shuffle.
+    while (currentIndex > 0) {
 
-// MOSTRARE PREZZO BIGLIETTO
-// SEZIONE ACCOUNT
-// COMPRA BIGLIETTO
-// SEARCHBAR
-// TICKET COLOR
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
+function isEmailValid(email) {
+    // Utilizziamo un'espressione regolare per validare l'email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function findFavGenres(){
+
+}

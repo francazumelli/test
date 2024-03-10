@@ -1,179 +1,286 @@
 {
-  "artisti": [
-    {
-      "id": 1,
-      "nome": "Drake",
-      "descrizione": "Rapper",
-      "genere": "RAP",
-      "foto": "drake.jpeg"
-    },
-    {
-      "id": 2,
-      "nome": "XXXTENTACION",
-      "descrizione": "Rapper",
-      "genere": "Hip-Hop",
-      "foto": "XXXTentacion.png"
-    },
-    {
-      "id": 3,
-      "nome": "21 Savage",
-      "descrizione": "Producer / Rapper",
-      "genere": "Hip-Hop",
-      "foto": "21Savage.jpeg"
-    },
-    {
-      "id": 4,
-      "nome": "The Weeknd",
-      "descrizione": "Popstar",
-      "genere": "Pop",
-      "foto": "theweeknd.jpeg"
-    },
-    {
-      "id": 5,
-      "nome": "Adele",
-      "descrizione": "Vocalist",
-      "genere": "Classic",
-      "foto": "adele.jpeg"
-    },
-    {
-      "id": 6,
-      "nome": "Bad Bunny",
-      "descrizione": "Boh",
-      "genere": "Latin",
-      "foto": "badbunny.jpeg"
-    }
-  ],
-  "concerti": [
-    {
-      "id": 1,
-      "idArtista": 1,
-      "localita": "LOS ANGELES",
-      "via": "Alameda Street",
-      "nCivico": "14B",
-      "data": "2024/02/28",
-      "ora": "20:00",
-      "nBiglietti": 200,
-      "prezzo" : 1.00
-    },
-    {
-      "id": 2,
-      "idArtista": 2,
-      "localita": "basilicata",
-      "via": "Via2",
-      "nCivico": "NumeroCivico2",
-      "data": "2024/05/25",
-      "ora": "19:30",
-      "nBiglietti": 100,
-      "prezzo" : 20.00
-
-    },
-    {
-      "id": 3,
-      "idArtista": 3,
-      "localita": "abruzzo",
-      "via": "Alameda Street",
-      "nCivico": "14B",
-      "data": "2024/08/20",
-      "ora": "20:00",
-      "nBiglietti": 20,
-      "prezzo" : 17.90
-
-    },
-    {
-      "id": 4,
-      "idArtista": 4,
-      "localita": "LOMBARDIA",
-      "via": "Alameda Street",
-      "nCivico": "14B",
-      "data": "2024/10/20",
-      "ora": "20:00",
-      "nBiglietti": 1000,
-      "prezzo" : 29.00
-
-    },
-    {
-      "id": 5,
-      "idArtista": 5,
-      "localita": "LOMBARDIA",
-      "via": "Milano",
-      "nCivico": "FORUM",
-      "data": "2025/02/28",
-      "ora": "22:00",
-      "nBiglietti": 2500,
-      "prezzo" : 48.00
-
-    },
-    {
-      "id": 6,
-      "idArtista": 6,
-      "localita": "SARDEGNA",
-      "via": "Cagliari",
-      "nCivico": "Piazza",
-      "data": "2025/09/18",
-      "ora": "21:00",
-      "nBiglietti": 1800,
-      "prezzo" : 29.00
-
-    }
-  ],
-  "utenti": [
-    {
-      "id": 1,
-      "nome": "Utente1",
-      "cognome": "Cognome1",
-      "dataNascita": "1990/01/01",
-      "email": "utente1@example.com",
-      "password": "password1",
-      "foto": "url_foto_utente1"
-    },
-    {
-      "id": 2,
-      "nome": "Utente2",
-      "cognome": "Cognome2",
-      "dataNascita": "1995/05/05",
-      "email": "utente2@example.com",
-      "password": "password2",
-      "foto": "url_foto_utente2"
-    }
-  ],
-  "ordini": [
-    {
-      "id": 1,
-      "data": "2024/02/15",
-      "nTransazione": "Transazione1",
-      "idConcerto": 1,
-      "idUtente": 1
-    },
-    {
-      "id": 2,
-      "data": "2024/02/15",
-      "nTransazione": "Transazione2",
-      "idConcerto": 2,
-      "idUtente": 2
-    }
-  ],
-  "regioni": [
-    "Abruzzo",
-    "Basilicata",
-    "Calabria",
-    "Campania",
-    "Emilia-Romagna",
-    "Friuli-Venezia Giulia",
-    "Lazio",
-    "Liguria",
-    "Lombardia",
-    "Marche",
-    "Molise",
-    "Piemonte",
-    "Puglia",
-    "Sardegna",
-    "Sicilia",
-    "Toscana",
-    "Trentino-Alto Adige",
-    "Umbria",
-    "Valle d'Aosta",
-    "Veneto"
-  ]
-
-
+    "artisti": [
+        {
+            "id": 1,
+            "nome": "Drake",
+            "descrizione": "Rapper",
+            "genere": "RAP",
+            "foto": "drake.jpeg",
+            "curiosita": "Drake ha iniziato la sua carriera come attore nella serie TV canadese 'Degrassi: The Next Generation'."
+        },
+        {
+            "id": 2,
+            "nome": "XXXTENTACION",
+            "descrizione": "Rapper",
+            "genere": "HIP-HOP",
+            "foto": "XXXTentacion.png",
+            "curiosita": "XXXTENTACION era noto per la sua versatilit\u00e0 musicale, spaziando tra vari generi come hip-hop, rap rock e emo rap."
+        },
+        {
+            "id": 3,
+            "nome": "21 Savage",
+            "descrizione": "Producer \/ Rapper",
+            "genere": "HIP-HOP",
+            "foto": "21Savage.jpeg",
+            "curiosita": "21 Savage \u00e8 nato a Londra, Inghilterra, ma si \u00e8 trasferito negli Stati Uniti da bambino."
+        },
+        {
+            "id": 4,
+            "nome": "The Weeknd",
+            "descrizione": "POPstar",
+            "genere": "POP",
+            "foto": "theweeknd.jpeg",
+            "curiosita": "Il nome d'arte 'The Weeknd' \u00e8 una forma abbreviata di 'The Weekend', che rappresenta il momento in cui ha iniziato a fare musica."
+        },
+        {
+            "id": 5,
+            "nome": "Adele",
+            "descrizione": "Vocalist",
+            "genere": "CLASSIC",
+            "foto": "adele.jpeg",
+            "curiosita": "Adele ha vinto il premio Oscar per la migliore canzone originale nel 2013 per 'Skyfall', tema del film di James Bond."
+        },
+        {
+            "id": 6,
+            "nome": "Bad Bunny",
+            "descrizione": "Boh",
+            "genere": "LATIN",
+            "foto": "badbunny.jpeg",
+            "curiosita": "Bad Bunny ha studiato comunicazioni audiovisive all'Universit\u00e0 di Porto Rico."
+        },
+        {
+            "id": 7,
+            "nome": "Lazza",
+            "descrizione": "Rapper italiano",
+            "genere": "TRAP",
+            "foto": "lazza.jpeg",
+            "curiosita": "Lazza \u00e8 membro del collettivo musicale italiano 'Dark Polo Gang'."
+        },
+        {
+            "id": 8,
+            "nome": "Chris Brown",
+            "descrizione": "American rapper",
+            "genere": "HIP-HOP",
+            "foto": "chris_brown.jpeg",
+            "curiosita": "Chris Brown ha iniziato la sua carriera musicale a soli 16 anni con il suo album di debutto e ha vinto numerosi premi musicali."
+        }
+    ],
+    "concerti": [
+        {
+            "id": 1,
+            "idArtista": 1,
+            "localita": "VENETO",
+            "via": "ARENA",
+            "nCivico": "VERONA",
+            "data": "2024\/02\/28",
+            "ora": "20:00",
+            "nBiglietti": 197,
+            "prezzo": 1,
+            "colore": "rgba(255, 218, 185, 0.7)"
+        },
+        {
+            "id": 2,
+            "idArtista": 2,
+            "localita": "TOSCANA",
+            "via": "PISTOIA",
+            "nCivico": "PIAZZA DUOMO",
+            "data": "2024\/05\/25",
+            "ora": "19:30",
+            "nBiglietti": 98,
+            "prezzo": 20,
+            "colore": "rgba(176, 224, 230, 0.7)"
+        },
+        {
+            "id": 3,
+            "idArtista": 3,
+            "localita": "abruzzo",
+            "via": "Alameda Street",
+            "nCivico": "14B",
+            "data": "2024\/08\/20",
+            "ora": "20:00",
+            "nBiglietti": 20,
+            "prezzo": 17.9,
+            "colore": "rgba(240, 128, 128, 0.7)"
+        },
+        {
+            "id": 4,
+            "idArtista": 4,
+            "localita": "ROMA",
+            "via": "CIRCO",
+            "nCivico": "MASSIMO",
+            "data": "2024\/10\/20",
+            "ora": "20:00",
+            "nBiglietti": 1000,
+            "prezzo": 29,
+            "colore": "rgba(144, 238, 144, 0.7)"
+        },
+        {
+            "id": 5,
+            "idArtista": 5,
+            "localita": "LOMBARDIA",
+            "via": "Milano",
+            "nCivico": "FORUM",
+            "data": "2025\/02\/28",
+            "ora": "22:00",
+            "nBiglietti": 2500,
+            "prezzo": 48,
+            "colore": "rgba(255, 182, 193, 0.7)"
+        },
+        {
+            "id": 6,
+            "idArtista": 6,
+            "localita": "EMILIA-ROMAGNA",
+            "via": "PIAZZA",
+            "nCivico": "CASTELLO",
+            "data": "2025\/09\/18",
+            "ora": "21:00",
+            "nBiglietti": 1800,
+            "prezzo": 29,
+            "colore": "rgba(173, 216, 230, 0.7)"
+        },
+        {
+            "id": 7,
+            "idArtista": 7,
+            "localita": "LOMBARDIA",
+            "via": "MILANO",
+            "nCivico": "Piazza Duomo",
+            "data": "2025\/01\/01",
+            "ora": "22:30",
+            "nBiglietti": 0,
+            "prezzo": 65,
+            "colore": "rgba(130, 168, 255, 0.7)"
+        },
+        {
+            "id": 8,
+            "idArtista": 8,
+            "localita": "LOMBARDIA",
+            "via": "MILANO",
+            "nCivico": "Piazza Duomo",
+            "data": "2028\/11\/23",
+            "ora": "21:30",
+            "nBiglietti": 0,
+            "prezzo": 77,
+            "colore": "rgba(100, 168, 255, 0.7)"
+        }
+    ],
+    "utenti": [
+        {
+            "nome": "franca",
+            "cognome": "Zumelli",
+            "dataNascita": "2004-09-08",
+            "email": "francazumelli@icloud.com",
+            "password": "Franca00",
+            "foto": "default.png",
+            "id": 1
+        },
+        {
+            "nome": "iuwhayd",
+            "cognome": "iouhyvg",
+            "dataNascita": "9899-12-31",
+            "email": "francazumeli@ii.com",
+            "password": "lolololo",
+            "foto": "default.png",
+            "id": 2
+        },
+        {
+            "nome": "poi",
+            "cognome": "poi",
+            "dataNascita": "",
+            "email": "uawudhauiwduiahdwui@iwadhuaw.com",
+            "password": "Franca00",
+            "foto": "default.png",
+            "id": 3
+        },
+        {
+            "id": 4,
+            "nome": "oiuhivjg",
+            "cognome": "9898-12-31",
+            "dataNascita": "wudhyaiubdahwiydhuy",
+            "email": "franca00",
+            "password": "default.png"
+        },
+        {
+            "id": 5,
+            "nome": "blabla",
+            "cognome": "blabla",
+            "dataNascita": "0089-12-31",
+            "email": "fawhfdihbh",
+            "password": "00000000",
+            "foto": "default.png"
+        },
+        {
+            "id": 6,
+            "nome": "blabla",
+            "cognome": "blllllla",
+            "dataNascita": "0009-12-31",
+            "email": "uawjidhbj",
+            "password": "00000000",
+            "foto": "default.png"
+        },
+        {
+            "id": 7,
+            "nome": "ajnwkdbh ",
+            "cognome": "jnkb ",
+            "dataNascita": "9899-08-08",
+            "email": "hbwaudibhawdbhjbaw",
+            "password": "00000000",
+            "foto": "default.png"
+        },
+        {
+            "id": 8,
+            "nome": "iuhdwbaj",
+            "cognome": "iojnkm",
+            "dataNascita": "",
+            "email": "wiouhgadbjdbuawiwhdhibhk",
+            "password": "00000000",
+            "foto": "default.png"
+        },
+        {
+            "id": 9,
+            "nome": "aiowdhuygu",
+            "cognome": "iohuhavgwjd",
+            "dataNascita": "2000-12-31",
+            "email": "francazumelli@gmail.com",
+            "password": "00000000",
+            "foto": "default.png"
+        }
+    ],
+    "ordini": [
+        {
+            "id": 1,
+            "data": "2025\/09\/18",
+            "nTransazione": "00000001",
+            "idConcerto": 1,
+            "idUtente": 1
+        },
+        {
+            "id": 2,
+            "data": "2024\/3\/9",
+            "nTransazione": "00000002",
+            "idConcerto": "4",
+            "idUtente": 1
+        }
+    ],
+    "regioni": [
+        "Abruzzo",
+        "Basilicata",
+        "Calabria",
+        "Campania",
+        "Emilia-Romagna",
+        "Friuli-Venezia Giulia",
+        "Lazio",
+        "Liguria",
+        "Lombardia",
+        "Marche",
+        "Molise",
+        "Piemonte",
+        "Puglia",
+        "Sardegna",
+        "Sicilia",
+        "Toscana",
+        "Trentino-Alto Adige",
+        "Umbria",
+        "Valle d'Aosta",
+        "Veneto"
+    ]
 }

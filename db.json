@@ -3,75 +3,102 @@
         {
             "id": 1,
             "nome": "Drake",
-            "descrizione": "Rapper",
+            "descrizione": "Chart-topping rapper",
             "genere": "RAP",
-            "foto": "drake.jpeg"
+            "foto": "drake.jpeg",
+            "curiosita": "Drake ha iniziato la sua carriera come attore nella serie TV canadese 'Degrassi: The Next Generation'."
         },
         {
             "id": 2,
             "nome": "XXXTENTACION",
-            "descrizione": "Rapper",
+            "descrizione": "Saddest rapper",
             "genere": "HIP-HOP",
-            "foto": "XXXTentacion.png"
+            "foto": "XXXTentacion.png",
+            "curiosita": "XXXTENTACION era noto per la sua versatilit\u00e0 musicale, spaziando tra vari generi come hip-hop, rap rock e emo rap."
         },
         {
             "id": 3,
             "nome": "21 Savage",
-            "descrizione": "Producer \/ Rapper",
+            "descrizione": "Masterful producer",
             "genere": "HIP-HOP",
-            "foto": "21Savage.jpeg"
+            "foto": "21Savage.jpeg",
+            "curiosita": "21 Savage \u00e8 nato a Londra, Inghilterra, ma si \u00e8 trasferito negli Stati Uniti da bambino."
         },
         {
             "id": 4,
             "nome": "The Weeknd",
-            "descrizione": "POPstar",
+            "descrizione": "Iconic popstar.",
             "genere": "POP",
-            "foto": "theweeknd.jpeg"
+            "foto": "theweeknd.jpeg",
+            "curiosita": "Il nome d'arte 'The Weeknd' \u00e8 una forma abbreviata di 'The Weekend', che rappresenta il momento in cui ha iniziato a fare musica."
         },
         {
             "id": 5,
             "nome": "Adele",
-            "descrizione": "Vocalist",
+            "descrizione": "Soulful vocalist",
             "genere": "CLASSIC",
-            "foto": "adele.jpeg"
+            "foto": "adele.jpeg",
+            "curiosita": "Adele ha vinto il premio Oscar per la migliore canzone originale nel 2013 per 'Skyfall', tema del film di James Bond."
         },
         {
             "id": 6,
             "nome": "Bad Bunny",
-            "descrizione": "Boh",
+            "descrizione": "Eccentric reggaeton artist.",
             "genere": "LATIN",
-            "foto": "badbunny.jpeg"
+            "foto": "badbunny.jpeg",
+            "curiosita": "Bad Bunny ha studiato comunicazioni audiovisive all'Universit\u00e0 di Porto Rico."
         },
         {
             "id": 7,
             "nome": "Lazza",
             "descrizione": "Rapper italiano",
             "genere": "TRAP",
-            "foto": "Lazza.jpeg"
+            "foto": "lazza.jpeg",
+            "curiosita": "Lazza \u00e8 membro del collettivo musicale italiano 'Dark Polo Gang'."
+        },
+        {
+            "id": 8,
+            "nome": "Chris Brown",
+            "descrizione": "American rapper",
+            "genere": "HIP-HOP",
+            "foto": "chris_brown.jpeg",
+            "curiosita": "Chris Brown ha iniziato la sua carriera musicale a soli 16 anni con il suo album di debutto e ha vinto numerosi premi musicali."
+        },
+        {
+            "id": 9,
+            "nome": "Billie Eilish",
+            "descrizione": "Pop visionary",
+            "genere": "POP",
+            "foto": "billie_eilish.jpeg",
+            "curiosita": "Billie Eilish, icona della musica pop, ha iniziato la sua carriera a una giovane età grazie al supporto del fratello Finneas. La sua estetica unica e il suo approccio autentico alla musica l'hanno resa una delle artiste più influenti della sua generazione."
         }
     ],
     "concerti": [
         {
             "id": 1,
             "idArtista": 1,
-            "localita": "LOS ANGELES",
-            "via": "Alameda Street",
-            "nCivico": "14B",
+            "localita": "VENETO",
+            "via": "ARENA",
+            "nCivico": "VERONA",
             "data": "2024\/02\/28",
             "ora": "20:00",
-            "nBiglietti": 198,
-            "prezzo": 1
+            "nBiglietti": 197,
+            "prezzo": 1,
+            "colore": "rgba(255, 218, 185, 0.7)",
+            "barcode": "189"
         },
         {
             "id": 2,
             "idArtista": 2,
-            "localita": "basilicata",
-            "via": "Via2",
-            "nCivico": "NumeroCivico2",
+            "localita": "TOSCANA",
+            "via": "PISTOIA",
+            "nCivico": "PIAZZA DUOMO",
             "data": "2024\/05\/25",
             "ora": "19:30",
-            "nBiglietti": 99,
-            "prezzo": 20
+            "nBiglietti": 98,
+            "prezzo": 20,
+            "colore": "rgba(176, 224, 230, 0.7)",
+            "barcode": "667"
         },
         {
             "id": 3,
@@ -82,18 +109,22 @@
             "data": "2024\/08\/20",
             "ora": "20:00",
             "nBiglietti": 20,
-            "prezzo": 17.9
+            "prezzo": 17.9,
+            "colore": "rgba(240, 128, 128, 0.7)",
+            "barcode": "527"
         },
         {
             "id": 4,
             "idArtista": 4,
-            "localita": "LOMBARDIA",
-            "via": "Alameda Street",
-            "nCivico": "14B",
+            "localita": "ROMA",
+            "via": "CIRCO",
+            "nCivico": "MASSIMO",
             "data": "2024\/10\/20",
             "ora": "20:00",
             "nBiglietti": 1000,
-            "prezzo": 29
+            "prezzo": 29,
+            "colore": "RGBA(186, 104, 200, 1)",
+            "barcode": "820"
         },
         {
             "id": 5,
@@ -104,18 +135,22 @@
             "data": "2025\/02\/28",
             "ora": "22:00",
             "nBiglietti": 2500,
-            "prezzo": 48
+            "prezzo": 48,
+            "colore": "RGBA(129, 199, 132, 1)",
+            "barcode": "086"
         },
         {
             "id": 6,
             "idArtista": 6,
-            "localita": "SARDEGNA",
-            "via": "Cagliari",
-            "nCivico": "Piazza",
+            "localita": "EMILIA-ROMAGNA",
+            "via": "PIAZZA",
+            "nCivico": "CASTELLO",
             "data": "2025\/09\/18",
             "ora": "21:00",
             "nBiglietti": 1800,
-            "prezzo": 29
+            "prezzo": 29,
+            "colore": " RGBA(100, 181, 246, 1)",
+            "barcode": "548"
         },
         {
             "id": 7,
@@ -125,8 +160,36 @@
             "nCivico": "Piazza Duomo",
             "data": "2025\/01\/01",
             "ora": "22:30",
-            "nBiglietti": 89,
-            "prezzo": 65
+            "nBiglietti": 0,
+            "prezzo": 65,
+            "colore": "RGBA(239, 83, 80, 1)",
+            "barcode": "010"
+        },
+        {
+            "id": 9,
+            "idArtista": 8,
+            "localita": "LOMBARDIA",
+            "via": "MILANO",
+            "nCivico": "Piazza Duomo",
+            "data": "2028\/11\/23",
+            "ora": "21:30",
+            "nBiglietti": 0,
+            "prezzo": 77,
+            "colore": "RGBA(77, 208, 225, 1)",
+            "barcode": "728"
+        },
+        {
+            "id": 8,
+            "idArtista": 9,
+            "localita": "LOMBARDIA",
+            "via": "MILANO",
+            "nCivico": "Piazza Duomo",
+            "data": "2025\/05\/11",
+            "ora": "00:00",
+            "nBiglietti": 32,
+            "prezzo": 90,
+            "colore": "RGBA(255, 245, 157, 1)",
+            "barcode": "778"
         }
     ],
     "utenti": [
@@ -136,221 +199,95 @@
             "dataNascita": "2004-09-08",
             "email": "francazumelli@icloud.com",
             "password": "Franca00",
-            "foto": "default.png",
+            "foto": "IMG_1467.jpeg",
             "id": 1
         },
         {
-            "nome": "Boh",
-            "cognome": "Boh",
-            "dataNascita": "2024-12-31",
-            "email": "duwhaduhauihd@boh.it",
-            "password": "blablabla",
-            "foto": "default.png",
+            "nome": "iuwhayd",
+            "cognome": "iouhyvg",
+            "dataNascita": "9899-12-31",
+            "email": "francazumeli@ii.com",
+            "password": "lolololo",
+            "foto": "IMG_1467.jpeg",
             "id": 2
         },
         {
-            "nome": "aa",
-            "cognome": "aa",
+            "nome": "poi",
+            "cognome": "poi",
             "dataNascita": "",
-            "email": "aa",
-            "password": "aa",
-            "foto": "default.png",
+            "email": "uawudhauiwduiahdwui@iwadhuaw.com",
+            "password": "Franca00",
+            "foto": "drake.jpeg",
             "id": 3
         },
         {
-            "nome": "diaidgiu",
-            "cognome": "diaidgiu",
+            "id": 4,
+            "nome": "oiuhivjg",
+            "cognome": "9898-12-31",
+            "dataNascita": "wudhyaiubdahwiydhuy",
+            "email": "franca00",
+            "password": "default.png",
+            "foto": "IMG_1467.jpeg"
+        },
+        {
+            "id": 5,
+            "nome": "blabla",
+            "cognome": "blabla",
+            "dataNascita": "0089-12-31",
+            "email": "fawhfdihbh",
+            "password": "00000000",
+            "foto": "chris_brown.jpeg"
+        },
+        {
+            "id": 6,
+            "nome": "blabla",
+            "cognome": "blllllla",
+            "dataNascita": "0009-12-31",
+            "email": "uawjidhbj",
+            "password": "00000000",
+            "foto": "IMG_1467.jpeg"
+        },
+        {
+            "id": 7,
+            "nome": "ajnwkdbh ",
+            "cognome": "jnkb ",
+            "dataNascita": "9899-08-08",
+            "email": "hbwaudibhawdbhjbaw",
+            "password": "00000000",
+            "foto": "drake.jpeg"
+        },
+        {
+            "id": 8,
+            "nome": "iuhdwbaj",
+            "cognome": "iojnkm",
             "dataNascita": "",
-            "email": "diaidgiu",
-            "password": "diaidgiu",
-            "foto": "default.png",
-            "id": 4
+            "email": "wiouhgadbjdbuawiwhdhibhk",
+            "password": "00000000",
+            "foto": "drake.jpeg"
         },
         {
-            "nome": "hwagdyiaugu",
-            "cognome": "hwagdyiaugu",
-            "dataNascita": "",
-            "email": "hwagdyiaugu",
-            "password": "hwagdyiaugu",
-            "foto": "default.png",
-            "id": 5
-        },
-        {
-            "nome": "awjkgdiyagwyduga",
-            "cognome": "awjkgdiyagwyduga",
-            "dataNascita": "",
-            "email": "awjkgdiyagwyduga",
-            "password": "awjkgdiyagwyduga",
-            "foto": "default.png",
-            "id": 6
-        },
-        {
-            "nome": "jdghywadgyuaw",
-            "cognome": "uiawdighawi",
-            "dataNascita": "",
-            "email": "uiawdighawi",
-            "password": "uiawdighawi",
-            "foto": "default.png",
-            "id": 9
-        },
-        {
-            "nome": "hahahahhahahah",
-            "cognome": "hahahahhahahah",
-            "dataNascita": "",
-            "email": "hahahahhahahah",
-            "password": "hahahahhahahah",
-            "foto": "default.png",
-            "id": 10
-        },
-        {
-            "nome": "112121212",
-            "cognome": "112121212",
-            "dataNascita": "",
-            "email": "112121212",
-            "password": "112121212",
-            "foto": "default.png",
-            "id": 11
-        },
-        {
-            "nome": "Franca",
-            "cognome": "Zumellui",
-            "dataNascita": "2004-09-08",
-            "email": "frazumelli04@gmail.com",
-            "password": "Franca00",
-            "foto": "default.png",
-            "id": 12
-        },
-        {
-            "nome": "Franca",
-            "cognome": "Zumelli",
-            "dataNascita": "2024-03-26",
-            "email": "francazumelli2@gmail.com",
-            "password": "FrancaZumelli2004",
-            "foto": "default.png",
-            "id": 13
-        },
-        {
-            "nome": "Franca",
-            "cognome": "Zume",
-            "dataNascita": "2003-12-31",
-            "email": "test@test.com",
-            "password": "Test0000",
-            "foto": "default.png",
-            "id": 14
-        },
-        {
-            "nome": "awhdu",
-            "cognome": "uwhd",
-            "dataNascita": "2040-12-31",
-            "email": "uwdauhiwda@gmail.com",
-            "password": "Franca00",
-            "foto": "default.png",
-            "id": 15
-        },
-        {
-            "nome": "Franca",
-            "cognome": "Zumelli",
-            "dataNascita": "2000-09-08",
-            "email": "blabla@gmail.com",
-            "password": "Franca00",
-            "foto": "default.png",
-            "id": 16
-        },
-        {
-            "nome": "Franca",
-            "cognome": "Zumelli",
-            "dataNascita": "2000-09-08",
-            "email": "blablabla@bla.com",
-            "password": "Franca11",
-            "foto": "default.png",
-            "id": 17
-        },
-        {
-            "nome": "Franca",
-            "cognome": "Zumelli",
-            "dataNascita": "2009-09-09",
-            "email": "fajwiwahudihawuid@gmail.com",
-            "password": "Franca00",
-            "foto": "default.png",
-            "id": 18
+            "id": 9,
+            "nome": "aiowdhuygu",
+            "cognome": "iohuhavgwjd",
+            "dataNascita": "2000-12-31",
+            "email": "francazumelli@gmail.com",
+            "password": "00000000",
+            "foto": "drake.jpeg"
         }
     ],
     "ordini": [
         {
             "id": 1,
-            "data": "2024\/02\/15",
+            "data": "2025\/09\/18",
             "nTransazione": "00000001",
             "idConcerto": 1,
             "idUtente": 1
         },
         {
             "id": 2,
-            "data": "2024\/02\/15",
+            "data": "2024\/3\/9",
             "nTransazione": "00000002",
-            "idConcerto": 2,
-            "idUtente": 2
-        },
-        {
-            "id": 3,
-            "data": "2024\/2\/25",
-            "nTransazione": "00000003",
-            "idConcerto": "1",
-            "idUtente": 1
-        },
-        {
-            "id": 4,
-            "data": "2024\/2\/25",
-            "nTransazione": "00000004",
-            "idConcerto": "2",
-            "idUtente": 1
-        },
-        {
-            "id": 5,
-            "data": "2024\/2\/26",
-            "nTransazione": "00000005",
-            "idConcerto": "1",
-            "idUtente": 1
-        },
-        {
-            "id": 6,
-            "data": "2024\/2\/26",
-            "nTransazione": "00000006",
-            "idConcerto": "2",
-            "idUtente": 1
-        },
-        {
-            "id": 7,
-            "data": "2024\/2\/26",
-            "nTransazione": "00000007",
-            "idConcerto": "2",
-            "idUtente": 1
-        },
-        {
-            "id": 8,
-            "data": "2024\/2\/26",
-            "nTransazione": "00000008",
-            "idConcerto": "1",
-            "idUtente": 1
-        },
-        {
-            "id": 9,
-            "data": "2024\/2\/26",
-            "nTransazione": "00000009",
-            "idConcerto": "2",
-            "idUtente": 1
-        },
-        {
-            "id": 10,
-            "data": "2024\/2\/26",
-            "nTransazione": "00000010",
-            "idConcerto": "1",
-            "idUtente": 1
-        },
-        {
-            "id": 11,
-            "data": "2024\/2\/26",
-            "nTransazione": "00000011",
-            "idConcerto": "2",
+            "idConcerto": "4",
             "idUtente": 1
         }
     ],
